@@ -3,6 +3,7 @@
 .ant-carousel .slick-slide {
   text-align: center;
   height: 160px;
+  width: 160px;
   line-height: 160px;
   background: #364d79;
   overflow: hidden;
@@ -12,7 +13,10 @@
   color: #fff;
 }
 
+.image-container {
+  text-align: center;
+}
+
 img {
-  height: 200px;
-  width: 200px;
+  height: 100%;
 }

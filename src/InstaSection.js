@@ -16,19 +16,23 @@ export default class InstaSection extends Component {
       }
 
       let images = this.state.urls.map(function(url) {
-        return (<img src={url}></img>)
+        return (
+          <div className='image-container'>
+            <img src={url}></img>
+          </div>
+        )
       })
 
       return (
-        <Carousel {...settings}>
-          {images}
-          
-        </Carousel>
+        <div className='insta'>
+          <Carousel {...settings}>
+            {images}
+          </Carousel>
+        </div>
       );
     }
 
     componentDidMount() {
-      console.log('mounted!')
       fetch('https://kylejm.herokuapp.com/v1/insta')
       .then(response => response.json())
       .then(function(json) {

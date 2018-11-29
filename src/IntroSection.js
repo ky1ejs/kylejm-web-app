@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './IntroSection.css'
 import profilePhoto from './profile_photo.jpeg';
 import styled from 'styled-components'
 
@@ -22,13 +21,18 @@ const WhiteBox = styled.div`
 `;
 
 const IntroContainer = styled.div`
-  max-width: 400px;
   display: flex;
   align-items: center;
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 165px;
+  left: calc(20% - 100px);
+
+  img {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+  }
 `;
 
 const NameHeading = styled.div`
@@ -49,7 +53,7 @@ export default class IntroSection extends Component {
         <WhiteBox />
         <PurpleBox />
         <IntroContainer>
-          <img src={profilePhoto} className="profile-photo" alt="logo" />
+          <img src={profilePhoto} alt="logo" />
           <NameHeading>
             <h2>Kyle McAlpine</h2>
             <h4>Engineering and Product</h4>

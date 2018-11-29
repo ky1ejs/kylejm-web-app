@@ -1,15 +1,61 @@
 import React, { Component } from 'react'
 import './IntroSection.css'
 import profilePhoto from './profile_photo.jpeg';
+import styled from 'styled-components'
+
+const Container = styled.div`
+  width: 100%;
+  position: relative;
+  display: flex;
+  height: 400px;
+  width: 100%;
+`
+
+const PurpleBox = styled.div`
+    width: 80%;
+    height: 400px;
+    background-color: #927CDB;
+`;
+
+const WhiteBox = styled.div`
+    width: 20%;
+`;
+
+const IntroContainer = styled.div`
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 165px;
+`;
+
+const NameHeading = styled.div`
+  margin-left: 25px;
+  h2, h4 {
+    color: #fff;
+  }
+  h2 {
+    font-weight: bold;
+  }
+`;
+
 
 export default class IntroSection extends Component {
   render() {
     return (
-      <div className="intro-section">
-        <img src={profilePhoto} className="profile-photo" alt="logo" />
-        <div className="purple-box">
-        </div>
-      </div>
+      <Container>
+        <WhiteBox />
+        <PurpleBox />
+        <IntroContainer>
+          <img src={profilePhoto} className="profile-photo" alt="logo" />
+          <NameHeading>
+            <h2>Kyle McAlpine</h2>
+            <h4>Engineering and Product</h4>
+          </NameHeading>
+        </IntroContainer>
+      </Container>
     )
   }
 }

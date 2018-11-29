@@ -10,11 +10,18 @@
     background-color: #927CDB;
 }
 
-.profile-photo { 
-    border-radius: 50%;
-    position: absolute;
-    top: 200px;
+.intro-detail-container {
+    vertical-align: center;
     left: 200px;
+}
+
+.profile-photo { 
+    display: inline-block;
+    border-radius: 50%;
     height: 200px;
     width: 200px;
-  }
+}
+
+.name-heading {
+    margin-left: 130px;
+}

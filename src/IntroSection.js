@@ -43,7 +43,7 @@ const NameHeading = styled.div`
   }
   h2 {
     font-weight: bold;
-    margin-bottom: 10px
+    margin-bottom: 10px;
   }
 `;
 

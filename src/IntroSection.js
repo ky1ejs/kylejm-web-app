@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import profilePhoto from './profile_photo.jpeg';
-import styled from 'styled-components'
+import React, { Component } from "react";
+import profilePhoto from "./assets/profile_photo.jpeg";
+import styled from "styled-components";
 
 const Container = styled.div`
   width: 100%;
@@ -8,16 +8,16 @@ const Container = styled.div`
   display: flex;
   height: 400px;
   width: 100%;
-`
+`;
 
 const PurpleBox = styled.div`
-    width: 80%;
-    height: 400px;
-    background-color: #927CDB;
+  width: 80%;
+  height: 400px;
+  background-color: #927cdb;
 `;
 
 const WhiteBox = styled.div`
-    width: 20%;
+  width: 20%;
 `;
 
 const IntroContainer = styled.div`
@@ -37,16 +37,16 @@ const IntroContainer = styled.div`
 
 const NameHeading = styled.div`
   margin-left: 25px;
-  h2, h4 {
+  h2,
+  h4 {
     color: #fff;
     margin: 0;
   }
   h2 {
     font-weight: bold;
-    margin-bottom: 10px
+    margin-bottom: 10px;
   }
 `;
-
 
 export default class IntroSection extends Component {
   render() {
@@ -62,6 +62,6 @@ export default class IntroSection extends Component {
           </NameHeading>
         </IntroContainer>
       </Container>
-    )
+    );
   }
 }

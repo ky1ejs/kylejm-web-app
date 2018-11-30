@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import styled from "styled-components";
+import React, { Component } from "react"
+import styled from "styled-components"
 
 const Wrapper = styled.div`
   width: 100%;
@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
-`;
+`
 
 const Image = styled.div`
   height: 250px;
@@ -26,16 +26,16 @@ const Image = styled.div`
   &:not(:first-child) {
     margin: 0 20px;
   }
-`;
+`
 
 export default class InstaSection extends Component {
-  state = { urls: [] };
+  state = { urls: [] }
 
   componentDidMount() {
     fetch("https://kylejm.herokuapp.com/v1/insta")
       .then(response => response.json())
       .then(json => json.data.map(post => post.images.low_resolution.url))
-      .then(urls => this.setState({ urls: urls }));
+      .then(urls => this.setState({ urls: urls }))
   }
 
   render() {
@@ -45,6 +45,6 @@ export default class InstaSection extends Component {
           <Image key={url} src={url} />
         ))}
       </Wrapper>
-    );
+    )
   }
 }

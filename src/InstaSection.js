@@ -1,5 +1,5 @@
-import React, { Component } from "react"
-import styled from "styled-components"
+import React, { Component } from 'react'
+import styled from 'styled-components'
 
 const Wrapper = styled.div`
   width: 100%;
@@ -32,7 +32,7 @@ export default class InstaSection extends Component {
   state = { urls: [] }
 
   componentDidMount() {
-    fetch("https://kylejm.herokuapp.com/v1/insta")
+    fetch('https://kylejm.herokuapp.com/v1/insta')
       .then(response => response.json())
       .then(json => json.data.map(post => post.images.low_resolution.url))
       .then(urls => this.setState({ urls: urls }))

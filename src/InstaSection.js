@@ -16,33 +16,14 @@ const Image = styled.img`
   width: 250px;
 `;
 
-const getUrls = () => {
-  const cache = JSON.parse(sessionStorage.getItem("instaUrls"))
-  if (cache) {
-    return cache.urls
-  }
-  return []
-}
-
 export default class InstaSection extends Component {
-  state = {
-    urls: getUrls()
-  }  
+  state = { urls: [] }
 
   componentDidMount() {
       fetch('https://kylejm.herokuapp.com/v1/insta')
       .then(response => response.json())
-      .then(function(json) {
-        return json.data.map(function(post) {
-          return post.images.low_resolution.url
-        })
-      })
-      .then(urls => {
-        this.setState({ urls: urls })
-        if (urls.length > getUrls()) {
-          sessionStorage.setItem("instaUrls", JSON.stringify({ urls: urls }))
-        }
-      })
+      .then((json) => json.data.map((post) => post.images.low_resolution.url))
+      .then((urls) => this.setState({ urls: urls }))
     }
 
     render() {

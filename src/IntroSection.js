@@ -39,9 +39,11 @@ const NameHeading = styled.div`
   margin-left: 25px;
   h2, h4 {
     color: #fff;
+    margin: 0;
   }
   h2 {
     font-weight: bold;
+    margin-bottom: 10px
   }
 `;
 
@@ -56,7 +58,7 @@ export default class IntroSection extends Component {
           <img src={profilePhoto} alt="logo" />
           <NameHeading>
             <h2>Kyle McAlpine</h2>
-            <h4>Engineering and Product</h4>
+            <h4>Engineering &amp; Product</h4>
           </NameHeading>
         </IntroContainer>
       </Container>

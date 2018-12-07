@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import ContentContainer from './ContentContainer.js'
 
 const Wrapper = styled.div`
   width: 100%;
   overflow-x: scroll;
   max-width: 1200px;
-  margin: 20px auto;
+  margin: 20px 0;
   display: flex;
   align-self: flex-end;
   &::-webkit-scrollbar {
@@ -25,11 +26,13 @@ export default class InstaSection extends Component {
 
   render() {
     return (
+      <ContentContainer>
       <Wrapper>
         {
           this.state.posts.map((post) => <InstaImage post={post} />)
         }
       </Wrapper>
+      </ContentContainer>
     );
   }
 }
@@ -62,13 +65,24 @@ class InstaImage extends Component {
 }
 
 const InstaImageContainer = styled.div`
-  margin: 0 20px;
   min-height: 250px;
   min-width: 250px;
   max-height: 250px;
   max-width: 250px;
   position: relative;
   cursor: pointer;
+
+   &:not(:first-child, :last-child) {
+     margin: 0 20px;
+   }
+
+   :first-child {
+     margin-right: 20px;
+   }
+
+   :last-child {
+     margin-left: 20px;
+   }
 `
 
 const Image = styled.img`

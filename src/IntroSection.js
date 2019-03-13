@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import profilePhoto from './profile_photo.jpeg';
+import profilePhoto from './profile_photo.jpeg'
 import styled from 'styled-components'
 
 const Container = styled.div`

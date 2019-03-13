@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import IntroSection from './IntroSection.js'
-import InstaSection from './InstaSection.js'
+import IntroSection from './IntroSection'
+import InstaSection from './InstaSection'
 import Footer from './Footer.js'
 
 export default class App extends Component {

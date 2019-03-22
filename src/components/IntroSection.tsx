@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import profilePhoto from './profile_photo.jpeg'
+import profilePhoto from '../assets/profile_photo.jpeg'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -8,17 +8,27 @@ const Container = styled.div`
   display: flex;
   height: 400px;
   width: 100%;
+  @media (max-width: 524px) {
+    height: 250px;
+    margin-bottom: 125px;
+  }
 `
 
 const PurpleBox = styled.div`
-    width: 80%;
-    height: 400px;
-    background-color: #927CDB;
-`;
+  width: 80%;
+  height: 100%;
+  background-color: #927cdb;
+  @media (max-width: 524px) {
+    width: 100%;
+  }
+`
 
 const WhiteBox = styled.div`
-    width: 20%;
-`;
+  width: 20%;
+  @media (max-width: 524px) {
+    display: none;
+  }
+`
 
 const IntroContainer = styled.div`
   display: flex;
@@ -28,16 +38,27 @@ const IntroContainer = styled.div`
   bottom: 0;
   left: calc(20% - 100px);
 
+  @media (max-width: 524px) {
+    left: 0;
+    width: 100%;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
   img {
     border-radius: 50%;
-    height: 200px;
     width: 200px;
+    @media (max-width: 524px) {
+      transform: translateY(50%);
+    }
   }
-`;
+`
 
 const NameHeading = styled.div`
   margin-left: 25px;
-  h2, h4 {
+  h2,
+  h4 {
     color: #fff;
     margin: 0;
   }
@@ -45,8 +66,12 @@ const NameHeading = styled.div`
     font-weight: bold;
     margin-bottom: 10px;
   }
-`;
-
+  @media (max-width: 524px) {
+    margin: 0;
+    text-align: center;
+    transform: translateY(130%);
+  }
+`
 
 export default class IntroSection extends Component {
   render() {
@@ -55,7 +80,7 @@ export default class IntroSection extends Component {
         <WhiteBox />
         <PurpleBox />
         <IntroContainer>
-          <img src={profilePhoto} alt="logo" />
+          <img src={profilePhoto} alt='logo' />
           <NameHeading>
             <h2>Kyle McAlpine</h2>
             <h4>Engineering &amp; Product</h4>
